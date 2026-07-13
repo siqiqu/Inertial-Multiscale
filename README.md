@@ -3,5 +3,5 @@ This repository contains an implementation of an inertial forward-backward split
 
 ## References
 
-<a id="1">[1]</a> Qu S., Peypouquet J., & Staudigl M. (2025).Inertial forward-backward algorithm with exterior penalization and Tikhonov regularization. arXiv preprint arXiv:2607.09495. [
+<a id="1">[1]</a> Qu S., Peypouquet J., & Staudigl M. (2026).Inertial forward-backward algorithm with exterior penalization and Tikhonov regularization. arXiv preprint arXiv:2607.09495. [
 https://doi.org/10.48550/arXiv.2607.09495](https://doi.org/10.48550/arXiv.2607.09495).

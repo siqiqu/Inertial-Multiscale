@@ -113,7 +113,7 @@ else:
     print(f"\n[Grid Search] Skipped — loading {CSV_PATH}\n")
 
 
-# ─── Load results ─────
+
 df = pd.read_csv("results/grid_search_results.csv")
 coarse_df = df[df['phase'] == 'coarse'].copy()
 
@@ -135,8 +135,6 @@ print(f"Winner (fixed mults): β_exp={BEST_B_EXP}, ε_exp={BEST_E_EXP}  "
       f"PSNR={winner_row['PSNR']:.2f} dB")
 
 
-# ─── FIGURE 1 ───
-
 pair_best = defaultdict(lambda: float('-inf'))
 for _, row in coarse_fixed.dropna(subset=['PSNR']).iterrows():
     key = (row['beta_exp'], row['eps_exp'])
@@ -157,7 +155,7 @@ cmap = LinearSegmentedColormap.from_list(
 fig1, axes = plt.subplots(1, 2, figsize=(16, 6.5))
 fig1.patch.set_facecolor("white")
 
-# ── Left: Heatmap ──
+
 ax = axes[0]
 ax.set_facecolor("#f8f8f8")
 valid_vals = grid[~np.isnan(grid)]
@@ -191,7 +189,7 @@ for i in range(len(all_b)):
         else:
             ax.text(j, i, "—", ha='center', va='center', fontsize=9, color='#aaaaaa')
 
-# Mark the winner
+
 if BEST_B_EXP in all_b and BEST_E_EXP in all_e:
     bi = all_b.index(BEST_B_EXP)
     ei = all_e.index(BEST_E_EXP)
@@ -204,7 +202,7 @@ cb.set_label("PSNR (dB)", color='black', fontsize=10)
 cb.ax.yaxis.set_tick_params(color='black')
 plt.setp(cb.ax.yaxis.get_ticklabels(), color='black')
 
-# ── Right: ranked results ──────
+
 ax2 = axes[1]
 ax2.set_facecolor("#f8f8f8")
 
